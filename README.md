@@ -1,3 +1,5 @@
+Образ расчитан на Linux amd64 машины.
+
 1. Собрать образ:
 docker build -t admiralu82/moproxy .
 
