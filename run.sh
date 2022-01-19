@@ -9,4 +9,4 @@ then
 else
   param="10.0.31.52:3128"
 fi
-/moproxy --port 8080  --log-level warn --stats-bind 0.0.0.0:8081 --http $param
+/moproxy --port 8080  --log-level warn --remote-dns --stats-bind 0.0.0.0:8081 --http $param
