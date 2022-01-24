@@ -2,6 +2,8 @@
 iptables -t nat -A OUTPUT -p tcp -m multiport --dports 80,443 -j REDIRECT --to-port 8080
 iptables -t nat -A PREROUTING -p tcp -m multiport --dports 80,443 -j REDIRECT --to-port 8080
 
+/out &
+
 param=""
 if [ -n "$1" ]
 then
