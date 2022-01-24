@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var IMG_PATH = "http://" + location.hostname + ":2281/nioproxy/statik/images/down2-icon.png";
+
+var url = window.location.href
+
+function getParameterByName(name, url) {
+if (!url) url = window.location.href;
+name = name.replace(/[\[\]]/g, '\\$&');
+var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+results = regex.exec(url);
+if (!results) return null;
+if (!results[2]) return '';
+return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function success(a) {
+console.log('success ' + url)
+location.href = getParameterByName("success", url);
+}
+
+function err(a) {
+console.log('ERR CERT for ' + IMG_PATH)
+location.href = getParameterByName("failure", url);
+}
+
+</script>
+
+<img id="img" onerror="err()" onload="success()" style="opacity:0">
+</body>
+<script> 
+document.getElementById('img').src = IMG_PATH;
+ </script>
+</html>
