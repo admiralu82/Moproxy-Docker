@@ -1,8 +1,6 @@
 #!/bin/bash
-iptables -t nat -A OUTPUT -p tcp -m multiport --dports 80,443 -j REDIRECT --to-port 8080
-iptables -t nat -A PREROUTING -p tcp -m multiport --dports 80,443 -j REDIRECT --to-port 8080
-
-/out &
+iptables -t nat -A OUTPUT -p tcp -m multiport --dports 80,443,2281,2282 -j REDIRECT --to-port 8080
+iptables -t nat -A PREROUTING -p tcp -m multiport --dports 80,443,2281,2282 -j REDIRECT --to-port 8080
 
 param=""
 if [ -n "$1" ]
