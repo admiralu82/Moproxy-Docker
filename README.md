@@ -31,6 +31,6 @@ docker start moproxy
 ### Добавляем шлюз по умолчанию
 /ip route add distance=1 gateway=10.31.78.1
 ### Настраиваем выход в интернет через другой шлюз
-/ip firewall mangle add action=route chain=prerouting dst-address-list=!LanNet dst-port=80,443 passthrough=yes protocol=tcp route-dst=10.31.78.250 src-address-list=LanNet
+/ip firewall mangle add action=route chain=prerouting dst-address-list=!LanNet dst-port=80,443,2281,2282 passthrough=yes protocol=tcp route-dst=10.31.78.250 src-address-list=LanNet
 
 
