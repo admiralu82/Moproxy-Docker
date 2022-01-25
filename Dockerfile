@@ -5,9 +5,6 @@ LABEL description="Moproxy - transparent proxy"
 LABEL org.opencontainers.image.authors="admiralu82@yandex.ru"
 COPY moproxy /
 COPY run.sh /
-COPY out /
-COPY out.png /
-COPY out.html /
 
 RUN apt update && apt install -y net-tools iproute2 iputils-ping nano traceroute iptables
 
